@@ -6,25 +6,22 @@ $(document).ready(function(){
     var year = d.getFullYear();
     var month = d.getMonth()+1;
     var day = d.getDate();
-    createSpecificDate(year, month, day)
+    generateAirport(46.6734,-71.7412);
+    // createSpecificDate(year, month, day)
+    // search("NYC");
 });
-function search() {
-    var departure = $('#city').val();
-    document.write(departure);
+//pass in the city to generate popularity
+function search(s) {
     $.ajax({
     url: 'https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search',
     type: 'GET',
     dataType: 'json',
-    data: {"apikey": "Uo0ACCqJG3OCzfFRtOb5ycdylaffGkQv", "origin": "NYC"},
+    data: {"apikey": "Uo0ACCqJG3OCzfFRtOb5ycdylaffGkQv", "origin": s},
     })
     .done(function(result) {
-        var name = result.results.length;
-
-        document.write(name);
-        document.write("success");
-        var obj = JSON.parse(result);
-        document.write(obj.origin);
-                // alert( obj.name === "John" );
+        var count = result.results.length;
+        console.log("success");
+        return count;
     })
     .fail(function() {
         console.log("error");
@@ -32,6 +29,32 @@ function search() {
     .always(function() {
         console.log("complete");
     });
+}
+function generatePopularity(latitude, longitude){
+    var Airport = generateAirport(latitude, longitude);
+    var flightcount = search(Airport);
+}
+//see if need more airport
+function generateAirport(latitude, longitude){
+    $.ajax({
+        url: 'https://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant',
+        type: 'GET',
+        dataType: 'json',
+        data: {"apikey": "Uo0ACCqJG3OCzfFRtOb5ycdylaffGkQv","latitude":latitude,"longitude": longitude},
+    })
+    .done(function(result) {
+        
+        var airport = document.write(result[0].airport);
+        console.log("success");
+    })
+    .fail(function() {
+        console.log("error");
+    })
+    .always(function() {
+        console.log("complete");
+    });
+    
+
 }
 function createSpecificDate(year, month, day){
             
