@@ -6,7 +6,7 @@ $(document).ready(function(){
     var year = d.getFullYear();
     var month = d.getMonth()+1;
     var day = d.getDate();
-    generateAirport(46.6734,-71.7412);
+    // generateAirport(46.6734,-71.7412);
     // createSpecificDate(year, month, day)
     // search("NYC");
 });
@@ -33,6 +33,8 @@ function search(s) {
 function generatePopularity(latitude, longitude){
     var Airport = generateAirport(latitude, longitude);
     var flightcount = search(Airport);
+    
+
 }
 //see if need more airport
 function generateAirport(latitude, longitude){
@@ -75,7 +77,7 @@ function createPeriod(year1, month1, day1, year2, month2, day2) {
     (month2<10 ? '0' : '') + month2 + '-' +
     (day2<10 ? '0' : '') + day2;
 
-    var date = date1+date2;
+    var date = date1+"--"date2;
     document.write(date+"<br>");
 
     return output;
