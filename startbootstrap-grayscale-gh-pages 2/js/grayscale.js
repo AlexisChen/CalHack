@@ -13,8 +13,9 @@ function collapseNavbar() {
     }
 }
 
-$(window).scroll(collapseNavbar);
-$(document).ready(collapseNavbar);
+
+$('#datetimepicker1').datepicker();
+$('#datetimepicker2').datepicker();
 
 $(window).scroll(collapseNavbar);
 $(document).ready(collapseNavbar);
