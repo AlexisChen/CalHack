@@ -5,6 +5,9 @@
  */
 
 // jQuery to collapse the navbar on scroll
+
+
+
 function collapseNavbar() {
     if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
@@ -12,6 +15,12 @@ function collapseNavbar() {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
     }
 }
+
+
+
+$('#datetimepicker1').datepicker();
+$('#datetimepicker2').datepicker();
+
 
 $(window).scroll(collapseNavbar);
 $(document).ready(collapseNavbar);
@@ -172,7 +181,7 @@ function init() {
     var mapElement = document.getElementById('map');
 
     // Create the Google Map using out element and options defined above
-    map = new google.maps.Map(mapElement, mapOptions);
+    // map = new google.maps.Map(mapElement, mapOptions);
 
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
     var image = 'img/map-marker.png';

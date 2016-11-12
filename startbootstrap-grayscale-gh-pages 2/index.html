@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Grayscale - Start Bootstrap Theme</title>
+    <title>Trip Planner</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link href="css/grayscale.min.css" rel="stylesheet">
+    <link href="css/grayscale.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,6 +28,10 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+      <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+      
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 </head>
 
@@ -41,7 +45,7 @@
                     Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i> <span class="light">Start</span> Bootstrap
+                    <i class="fa fa-play-circle"></i> <span class="light">Start</span> My Trip
                 </a>
             </div>
 
@@ -56,10 +60,10 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#download">Download</a>
+                        <a class="page-scroll" href="#download">Doodle</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Info</a>
                     </li>
                 </ul>
             </div>
@@ -87,18 +91,18 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="container content-section text-center">
+    <section id="about" class="hhh container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>About Grayscale</h2>
-                <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-                <p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
-                <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>
+                <h2>About Trip Planner</h2>
+                <p>Trip planner is a smart application that do the roadtrip plans for you. Whenever you want to go on a roadtrip with families and friends, open trip planner and get on your journey.</p>
+                <p>Click on START to draw your ideal route.</p>
+                <p>Press INFO to specify your trip plans</p>
             </div>
         </div>
     </section>
 
-    <!-- Download Section -->
+    <!-- Doodle Section -->
     <section id="download" class="content-section text-center">
         <div class="download-section">
             <div class="container">
@@ -111,39 +115,46 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Info Section -->
     <section id="contact" class="container content-section text-center">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                    </li>
-                </ul>
-            </div>
+            
+                <h2>Start planning your trip</h2>
+                <p>Start Date: <input type="text" id="datepicker1"></p>
+                <p>End Date: <input type="text" id="datepicker2"></p>
+                <p>Choose your travelling days</p>
+                <input type="range" id="Slider" min="0" max="10" value="0" step="1" onchange="showValue(this.value)" />
+                <span id="range"></span>
+                
+                <p></p>
+                <input type="submit" id = "search"></input>
+  
+            
         </div>
     </section>
 
     <!-- Map Section -->
-    <div id="map"></div>
+    <!-- <div id="map"></div> -->
 
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Your Website 2016</p>
+            <p>Meet our team!</p><br>
+            <p>Ziyan(James) Ma: ziyanma@usc.edu</p><br>
+            <p>Haowen(Hannah) Lin: haowenli@usc.edu</p><br>
+            <p>Ming(Alexis) Chen: chenming@usc.edu</p><br>
+
         </div>
     </footer>
+    
 
+    <script type="text/javascript">
+
+        function showValue(newValue)
+        {
+            document.getElementById("range").innerHTML=newValue;
+        }
+    </script>
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.js"></script>
 
@@ -157,7 +168,47 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
     <!-- Theme JavaScript -->
-    <script src="js/grayscale.min.js"></script>
+    <script src="js/grayscale.js"></script>
+
+
+    <script>
+    $(document).ready(function(){
+    $('#search').click(function(){
+        search();
+    });
+    
+    //<script type="text/javascript">
+    // createSpecificDate(year, month, day)
+    // search("NYC");
+    });
+      
+
+      function search(){
+         // $( "#datepicker-1" ).datepicker();
+            var start = $('#datepicker1').val();
+
+            //var startdate = start.replace(/[/]/g, '-');
+            //document.write(startdate);
+            // console.log(start);
+            //$('#datepicker-1').val();
+            // $( "#datepicker-2" ).datepicker();
+      }
+ 
+         $(function() {
+
+            $( "#datepicker1" ).datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+ 
+            // var start = $('#datepicker-1').val();
+            // console.log(start);
+            //$('#datepicker-1').val();
+            $( "#datepicker2" ).datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+         });
+         
+      </script>
 
 </body>
 
