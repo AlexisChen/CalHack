@@ -5,9 +5,6 @@
  */
 
 // jQuery to collapse the navbar on scroll
-
-
-
 function collapseNavbar() {
     if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
@@ -16,11 +13,8 @@ function collapseNavbar() {
     }
 }
 
-
-
-$('#datetimepicker1').datepicker();
-$('#datetimepicker2').datepicker();
-
+$(window).scroll(collapseNavbar);
+$(document).ready(collapseNavbar);
 
 $(window).scroll(collapseNavbar);
 $(document).ready(collapseNavbar);
