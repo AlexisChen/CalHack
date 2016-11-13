@@ -1,12 +1,14 @@
-
+var enabled = true;
 $(document).ready(function(){
     $('#sm-btn').click(function(){
+        if (!enabled) return;
+        enabled = false;
         for (var i = 0; i<locationsArray.length; i++){
             var lat = locationsArray[i].geometry.location.lat();
             var lng = locationsArray[i].geometry.location.lng();
             getPriority(lat, lng, i);
         }
-        setTimeout(processLocationArray, 1500*locationsArray.length);
+        setTimeout(processLocationArray, 1000*locationsArray.length);
     });
 });
 var highest = [];
@@ -42,6 +44,7 @@ function processLocationArray(){
         s+=highest[i].name;
         s+='</li><li class="day">'
         s+=Math.floor(highest[i].priority/highesttotal * days)+ " Days</li>";
+        s+="</ul><ul class='aplace hotels'>";
         for (var j = 0 ; j < 5; j++){
             s+='<li class="hotel">';
             s+=highest[i].hotels[j].property_name;
@@ -49,6 +52,7 @@ function processLocationArray(){
         }
         s+='</ul>';
     }
+    console.log(s);
     $('.place').append(s);
 
 }

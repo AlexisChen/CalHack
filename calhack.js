@@ -35,9 +35,11 @@ class cityPriority{
 }
 var cp = new cityPriority();
 
+
+
 //sample call of adding flight priority to the current cp;
 generateAirport(46.6734, -71.7412, function(airport) {
-    search(airport, function(count) {
+    flight(airport, function(count) {
         cp.addflight(count);
     });
 });
@@ -64,7 +66,36 @@ returnHotelNum(46.6734,-71.7412);
 //otherwise please reinitialize another instance
 generatepoi(46.6734,-71.7412)
 
+//
+//
+function flight(s, callback) {
+    //generate the date
+    //returns date of a specific day 
+var d = new Date();
+var year = d.getFullYear();
+var month = d.getMonth();
+var date = year + '-' +
+    (month<10 ? '0' : '') + month;
+    
+    $.ajax({
+        url: 'https://api.sandbox.amadeus.com/v1.2/travel-intelligence/top-destinations',
+        type: 'GET',
+        dataType: 'json',
+        data: {"apikey": "Uo0ACCqJG3OCzfFRtOb5ycdylaffGkQv", "period":"2016-01","origin":s},
 
+    })
+    .done(function(result) {
+        var count  = result.results.length;
+        callback(result);
+    })
+    .fail(function() {
+        console.log("error");
+    })
+    .always(function() {
+        console.log("complete");
+    });
+    
+}
 
 //pass in the city to generate popularity
 >>>>>>> 80b8dc01221bc6cc6e66af578404213078f6192b
@@ -111,12 +142,12 @@ function generateAirport(latitude, longitude, callback){
     .always(function() {
         console.log("complete");
     });
-
-
-
 }
 
+<<<<<<< Updated upstream
 var value;
+=======
+>>>>>>> Stashed changes
 
 //num is the number of hotel numbers 
  function returnHotelNum(latitude,longitude){   
