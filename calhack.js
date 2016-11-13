@@ -47,7 +47,7 @@ returnHotelNum(46.6734,-71.7412);
 //always and only console.log inside function to check the value
 //don't forget to call cp.clear() after retrieve the priority
 //otherwise please reinitialize another instance
-
+generatepoi(46.6734,-71.7412)
 
 
 //testing of the cp class
@@ -148,6 +148,31 @@ function generateAirport(latitude, longitude, callback){
     });;
 }  
 
+function generatepoi(latitude, longitude){
+    $.ajax({
+        url: 'https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-circle',
+        type: 'GET',
+        dataType: 'json',
+        data: {"apikey": "Uo0ACCqJG3OCzfFRtOb5ycdylaffGkQv",
+            "latitude": latitude,
+            "longitude": longitude,
+            "radius":"50"},
+
+    })
+    .done(function(result) {
+        console.log("success");
+        var s = result.points_of_interest.length;
+        cp.addhotel(s)
+        document.write(cp.priority);
+    })
+    .fail(function() {
+        console.log("error");
+    })
+    .always(function() {
+        console.log("complete");
+    });
+    
+}
 //returns date of a specific day 
 // var d = new Date();
 // var year = d.getFullYear();
