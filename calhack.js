@@ -14,7 +14,7 @@ $(document).ready(function(){
     });
 
     function something(c) {
-        
+        document.write(c);
     }
     // var d = new Date();
     // var year = d.getFullYear();
