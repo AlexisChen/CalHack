@@ -39,7 +39,7 @@ p {
   }
 }
 a {
-  color: #42DCA3;
+  color: #444;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -47,7 +47,7 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #1d9b6c;
+  color: #444;
 }
 .light {
   font-weight: 400;
@@ -423,6 +423,7 @@ ul{
   float: left;
   padding-left: 8px;
   padding-right: 8px;
+  margin-top: 20px;
   cursor: pointer;
 }
 .city{
@@ -432,6 +433,7 @@ ul{
   border: 2px solid #fff;
   background-color: orange;
   color: #444;
+  min-width: 120px;
 }
 .hotel{
   display: inline-block;
@@ -445,4 +447,43 @@ ul{
   display: inline-block;
   margin-left: 20px;
   border-radius: 5px;
+  margin-right: 20px;
+}
+#contact{
+  padding-top: 200px;
+}
+.details{
+  margin-left: 10%;
+  width:  80%;
+}
+.hotels{
+  float: left;
+  display: block;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+}
+.sea-res{
+  margin-bottom: 50px;
+}
+.clearfix{
+  zoom: 1;
+  clear: both;
+}
+#sm-btn{
+  margin-top: 30px;
+    margin-left: 20px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 8px; padding-right: 8px;
+    background: orange;
+    border: none;
+    float: left;
+    border-radius: 5px;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.title{
+  margin-left: 5%;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 20px;
 }

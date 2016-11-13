@@ -39,37 +39,22 @@ var cp = new cityPriority();
 generateAirport(46.6734, -71.7412, function(airport) {
     search(airport, function(count) {
         cp.addflight(count);
-        // document.write(cp.retrievepriority());
     });
 });
-//sample call of adding hotel priority to the current cp;
+
 returnHotelNum(46.6734,-71.7412);
-//always and only console.log inside function to check the value
-//don't forget to call cp.clear() after retrieve the priority
-//otherwise please reinitialize another instance
 
+function getPriority(lat, lng){
+    var cp = new cityPriority();
+    generateAirport(lat, lng, function(airport) {
+    search(airport, function(count) {
+            cp.addflight(count);
+        });
+    });
+    returnHotelNum(lat,lng);
+    return cp.priority;
+}
 
-
-//testing of the cp class
-
-// var cp = new cityPriority();
-// document.write(cp.priority);
-
-// cp.addflight(10);
-// document.write(cp.priority);
-
-// cp.addhotel(10);
-// document.write(cp.priority);
-
-// cp.addpoi(10);
-// document.write(cp.priority);
-
-// document.write(""+cp.retrievepriority());
-// cp.clear();
-// document.write(cp.priority);
-
-
-//pass in the city to generate popularity
 function search(s, callback) {
 
     document.write("searching starts"+"<br>");
@@ -81,8 +66,6 @@ function search(s, callback) {
     })
     .done(function(result) {
         var count = result.results.length;
-        // a = count;
-        // document.write(a);
         callback(count);
     })
     .fail(function() {
@@ -120,6 +103,8 @@ function generateAirport(latitude, longitude, callback){
 
 }
 
+var value;
+
 //num is the number of hotel numbers 
  function returnHotelNum(latitude,longitude){   
     //var s=0;
@@ -136,8 +121,9 @@ function generateAirport(latitude, longitude, callback){
     })
     .done(function(result) {       
         var s  = result.results.length;
-        // console.log(s);
-        // getHotelNum(s);
+        console.log(s);
+        value = s;
+        foo();
         cp.addhotel(s);
     })
     .fail(function() {
@@ -147,6 +133,10 @@ function generateAirport(latitude, longitude, callback){
         console.log("complete");
     });;
 }  
+
+function foo(){
+    console.log("foo: ", value);
+}
 
 //returns date of a specific day 
 // var d = new Date();
