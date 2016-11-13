@@ -40,12 +40,11 @@ function processLocationArray(){
     }
     var s = "<p class='title'>Basic Trip</p>";
     for (var i = 0; i<highest.length; i++){
-        s+='<ul class="aplace clearfix"><li class="city"><a href=';
-        s+=url + ">"
+        s+='<ul class="aplace"><li class="city">';
         s+=highest[i].name;
-        s+='</a></li><li class="day">'
+        s+='</li><li class="day">'
         s+=Math.floor(highest[i].priority/highesttotal * days)+ " Days</li>";
-        s+="</ul><ul class='aplace hotels clearfix'>";
+        s+="</ul><ul class='aplace hotels'>";
         for (var j = 0 ; j < 5; j++){
             s+='<li class="hotel">';
             s+=highest[i].hotels[j].property_name;
