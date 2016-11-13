@@ -41,6 +41,7 @@ generateAirport(46.6734, -71.7412, function(airport) {
         cp.addflight(count);
     });
 });
+<<<<<<< HEAD
 
 returnHotelNum(46.6734,-71.7412);
 
@@ -55,6 +56,18 @@ function getPriority(lat, lng){
     return cp.priority;
 }
 
+=======
+//sample call of adding hotel priority to the current cp;
+returnHotelNum(46.6734,-71.7412);
+//always and only console.log inside function to check the value
+//don't forget to call cp.clear() after retrieve the priority
+//otherwise please reinitialize another instance
+generatepoi(46.6734,-71.7412)
+
+
+
+//pass in the city to generate popularity
+>>>>>>> 80b8dc01221bc6cc6e66af578404213078f6192b
 function search(s, callback) {
 
     document.write("searching starts"+"<br>");
@@ -134,10 +147,38 @@ var value;
     });;
 }  
 
+<<<<<<< HEAD
 function foo(){
     console.log("foo: ", value);
 }
 
+=======
+function generatepoi(latitude, longitude){
+    $.ajax({
+        url: 'https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-circle',
+        type: 'GET',
+        dataType: 'json',
+        data: {"apikey": "Uo0ACCqJG3OCzfFRtOb5ycdylaffGkQv",
+            "latitude": latitude,
+            "longitude": longitude,
+            "radius":"50"},
+
+    })
+    .done(function(result) {
+        console.log("success");
+        var s = result.points_of_interest.length;
+        cp.addhotel(s)
+        document.write(cp.priority);
+    })
+    .fail(function() {
+        console.log("error");
+    })
+    .always(function() {
+        console.log("complete");
+    });
+    
+}
+>>>>>>> 80b8dc01221bc6cc6e66af578404213078f6192b
 //returns date of a specific day 
 // var d = new Date();
 // var year = d.getFullYear();
