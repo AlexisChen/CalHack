@@ -77,9 +77,6 @@ function returnHotelName(latitude,longitude,checkin,checkout){
 
        });
 
- 
-   
-  
 }  
 
 returnHotelNum(43.7,7.2);    

@@ -50,24 +50,6 @@ returnHotelNum(46.6734,-71.7412);
 generatepoi(46.6734,-71.7412)
 
 
-//testing of the cp class
-
-// var cp = new cityPriority();
-// document.write(cp.priority);
-
-// cp.addflight(10);
-// document.write(cp.priority);
-
-// cp.addhotel(10);
-// document.write(cp.priority);
-
-// cp.addpoi(10);
-// document.write(cp.priority);
-
-// document.write(""+cp.retrievepriority());
-// cp.clear();
-// document.write(cp.priority);
-
 
 //pass in the city to generate popularity
 function search(s, callback) {
@@ -81,8 +63,6 @@ function search(s, callback) {
     })
     .done(function(result) {
         var count = result.results.length;
-        // a = count;
-        // document.write(a);
         callback(count);
     })
     .fail(function() {
