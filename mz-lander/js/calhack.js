@@ -64,30 +64,12 @@ function processLocationArray(){
     }
     var s = "<p class='title'>Basic Trip</p>";
     for (var i = 0; i<highest.length; i++){
-<<<<<<< HEAD
-
-        s+='<ul class="aplace clearfix"><li class="city">'
-=======
         s+='<ul class="aplace clearfix"><li class="city">';
->>>>>>> origin/master
         s+=highest[i].name;
         s+='</li><li class="day">'
         s+=Math.floor(highest[i].priority/highesttotal * days)+ " Days</li>";
         s+="</ul><ul class='aplace hotels clearfix'>";
         for (var j = 0 ; j < 5; j++){
-<<<<<<< HEAD
-            s+='<li class="hotel" >';
-            var term = highest[i].hotels.0.address.line1+", ";
-            term+= highest[i].hotels.0.address.city;
-            term+= ", ";
-            term+= highest[i].hotels.0.address.country;
-            term+=", ";
-            term+= highest[i].hotels.0.address.postal_code;
-            var url = "http://maps.google.com/?q="+term;
-            s+='<a href="' + url + '">  '
-            s+=highest[i].hotels[j].property_name;
-            s+='</a></li>'
-=======
             s+='<li class="hotel">';
             var term = "http://maps.google.com/?q="+
                 highest[i].hotels[j].address.line1+","
@@ -137,7 +119,6 @@ function processLocationArray(){
             s+='<a href = "' + term + ' ">'
             s+=detailed[i].hotels[j].property_name;
             s+='</a></li>'
->>>>>>> origin/master
         }
         s+='</ul>';
     }
