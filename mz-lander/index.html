@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Trip Planner</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    
+
+   
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">Start</span> My Trip
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Doodle</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Info</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Grayscale</h1>
+                        <p class="intro-text">A free, responsive, one page Bootstrap theme.
+                            <br>Created by Start Bootstrap.</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="hhh container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About Trip Planner</h2>
+                <p>Trip planner is a smart application that do the roadtrip plans for you. Whenever you want to go on a roadtrip with families and friends, open trip planner and get on your journey.</p>
+                <p>Click on START to draw your ideal route.</p>
+                <p>Press INFO to specify your trip plans</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doodle Section -->
+    <section id="download" class="content-section text-center">
+        <div id="map"></div>
+        <canvas id="mycanvas"></canvas>
+        <div id = "toolbar">
+            <div id="drawButton"></div>
+            <div id="clear"></div>
+            <div id="move"></div>
+            </div>
+        <div id="slide-bar">
+            <p>Start Date</p>
+            <input type="text" 
+             id = "datepicker1">
+            <p>End Date</p>
+            <input type="text" 
+             id = "datepicker2">
+
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact Start Bootstrap</h2>
+                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
+                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <!-- <div id="map"></div> -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Meet our team!</p><br>
+            <p>Ziyan(James) Ma: ziyanma@usc.edu</p><br>
+            <p>Haowen(Hannah) Lin: haowenli@usc.edu</p><br>
+            <p>Ming(Alexis) Chen: chenming@usc.edu</p><br>
+
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    
+
+    <!-- Plugin JavaScript -->
+    
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script>
+            var map;
+            var infowindow;
+            var longtitude;
+            var latitude;
+            var locationsArray = [];
+            function initMap() {
+                initGeolocation(); 
+                        
+             }
+
+             function initGeolocation()
+            {
+                if( navigator.geolocation )
+                {
+                   navigator.geolocation.getCurrentPosition(success, fail);
+                }
+                else
+                {
+                   alert("Sorry, your browser does not support geolocation services.");
+                   fail();
+                }
+             }
+
+             function success(position)
+             {
+                 longtitude = position.coords.longitude;
+                 latitude = position.coords.latitude;
+                 setMap();
+             }
+
+             function fail()
+             {
+                longtitude = -37.397;
+                latitude = 122.644;
+                setMap();
+             }
+             function setMap(){
+                var myLatlng1 = new google.maps.LatLng(latitude, longtitude);
+                    map = new google.maps.Map(document.getElementById('map'), {
+                    // center: {lat: -34.397, lng: 150.644},
+                    center: myLatlng1,
+                    zoom: 8
+                }); 
+                    initialize();
+
+                  var pyrmont = new google.maps.LatLng(37.52, -122.16);
+                    infowindow = new google.maps.InfoWindow();
+                    var service = new google.maps.places.PlacesService(map);
+                  
+    
+             }
+
+             function callback(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                  for (var i = 0; i < results.length; i++) {
+                    createMarker(results[i]);
+                    var isThere = false;
+                    for (var j = 0; j<locationsArray.length; j++){
+                        if (locationsArray[j].name == results[i].name){
+                            isThere = true;
+                        }
+                    }
+                    if (!isThere) locationsArray.push(results[i]);
+                  }
+                }
+               }
+              
+               var markers = [];
+              function createMarker(place) {
+                var placeLoc = place.geometry.location;
+                // console.log(placeLoc);
+                var marker = new google.maps.Marker({
+                  map: map,
+                  position: place.geometry.location
+                });
+                markers.push(marker);
+                  google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.setContent(place.name);
+                    infowindow.open(map, this);
+                });
+        }
+    </script>
+    <script>
+        $(function(){
+            $('#ui-datepicker-div').removeClass('ui-helper-hidden-accessible');
+            $( "#datepicker1" ).datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+
+ 
+ 
+            $( "#datepicker2" ).datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+
+            $("#datepicker1").on('click', function(event) {
+                console.log("here");
+                $(this).datepicker('show');
+                /* Act on the event */
+            });
+            $("#datepicker2").on('click', function(event) {
+                console.log("here");
+                $(this).datepicker('show');
+                /* Act on the event */
+            });
+
+            $('#ui-datepicker-div').css('clip', 'auto');
+            });
+    </script>
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9sx_YsP88c0wllcTeN0fKaWuRWHSUpWk&libraries=places&callback=initMap"
+  type="text/javascript"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+    <script src="js/maincopy.js"></script>
+    
+
+</body>
+
+</html>
