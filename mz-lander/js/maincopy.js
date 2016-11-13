@@ -364,7 +364,7 @@ function draw()
     var delx, dely; 
     var wid;
     var px, py, nx, ny;
-    if (mouse.vel<0.001) return;
+    if (mouse.vel<0.0001) return;
     wid = 0.04-mouse.vel;
     wid = wid*WIDTH;
     if(wid<0.001)
