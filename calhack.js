@@ -1,17 +1,32 @@
+
+var a;
 $(document).ready(function(){
     $('#search').click(function(){
-        search();
+
+        generateAirport(46.6734, -71.7412, function(airport) {
+            search(airport, function(count) {
+                something(count)
+
+            });
+        });
+
+
     });
-    var d = new Date();
-    var year = d.getFullYear();
-    var month = d.getMonth()+1;
-    var day = d.getDate();
-    // generateAirport(46.6734,-71.7412);
+
+    function something(c) {
+        
+    }
+    // var d = new Date();
+    // var year = d.getFullYear();
+    // var month = d.getMonth()+1;
+    // var day = d.getDate();
     // createSpecificDate(year, month, day)
-    // search("NYC");
+    // var s = search("NYC");
 });
 //pass in the city to generate popularity
-function search(s) {
+function search(s, callback) {
+
+    document.write("searching starts"+"<br>");
     $.ajax({
     url: 'https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search',
     type: 'GET',
@@ -20,8 +35,9 @@ function search(s) {
     })
     .done(function(result) {
         var count = result.results.length;
-        console.log("success");
-        return count;
+        // a = count;
+        // document.write(a);
+        callback(count);
     })
     .fail(function() {
         console.log("error");
@@ -29,15 +45,11 @@ function search(s) {
     .always(function() {
         console.log("complete");
     });
-}
-function generatePopularity(latitude, longitude){
-    var Airport = generateAirport(latitude, longitude);
-    var flightcount = search(Airport);
     
-
 }
-//see if need more airport
-function generateAirport(latitude, longitude){
+
+//TO BE DETERMINED TO see if need more airport
+function generateAirport(latitude, longitude, callback){
     $.ajax({
         url: 'https://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant',
         type: 'GET',
@@ -46,8 +58,10 @@ function generateAirport(latitude, longitude){
     })
     .done(function(result) {
         
-        var airport = document.write(result[0].airport);
-        console.log("success");
+        var airport = result[0].airport;
+        document.write("from generate Airport: "+ airport);
+        return callback(airport);
+
     })
     .fail(function() {
         console.log("error");
@@ -55,9 +69,11 @@ function generateAirport(latitude, longitude){
     .always(function() {
         console.log("complete");
     });
-    
+
+
 
 }
+
 function createSpecificDate(year, month, day){
             
     var date = year + '-' +
@@ -77,7 +93,7 @@ function createPeriod(year1, month1, day1, year2, month2, day2) {
     (month2<10 ? '0' : '') + month2 + '-' +
     (day2<10 ? '0' : '') + day2;
 
-    var date = date1+"--"date2;
+    var date = date1+"--"+date2;
     document.write(date+"<br>");
 
     return output;
