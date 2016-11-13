@@ -212,6 +212,12 @@ function initialize(){
 			$('#drawButton').css({
 				backgroundColor: 'orange'
 			});
+            $('html, body').stop().animate({
+                    scrollTop: $("#download").offset().top
+                }, 1500, 'easeInOutExpo');
+            for (var i = 0; i<locationsArray.length; i++){
+                total+=locationsArray[i].priority;
+            }
 		}
 		else{
 			iswhite = true;
@@ -329,6 +335,26 @@ function initialize(){
 		event.preventDefault();
 		/* Act on the event */
 	});
+    $("#mycanvas").on('mouseleave', function(e){
+        if (isMouseDown){
+            isDragging = false;
+            isMouseDown = false;
+            var dataURL = canvas.toDataURL("image/png");
+            var width=$(window).width();
+            var height = $(window).height();
+            var bounds = new google.maps.LatLngBounds(
+                map.getBounds().getSouthWest(),
+                map.getBounds().getNorthEast()
+            );
+            // console.log(map.getBounds().getNorthEast().lat());
+            // console.log(map.getBounds().getNorthEast().lng());
+            // console.log(map.getBounds().getSouthWest());
+            // console.log(map.getProjection().fromPointToLatLng(map.getBounds().getNorthEast()).lat());
+            overlay = new USGSOverlay(bounds, dataURL, map);
+            overlayers.push(overlay);
+            context.clearRect(0, 0, $(window).width(), 800);
+        }
+    })
 }
 
 

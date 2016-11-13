@@ -1,9 +1,20 @@
 var enabled = true;
 var rolling;
 var rolled;
+var duration;
 $(document).ready(function(){
     $('#sm-btn').click(function(){
         if (!enabled) return;
+            duration = Math.floor(
+                (new Date($("#datepicker2").val())-new Date($("#datepicker1").val()))
+                );
+            duration /= 86400000;
+                console.log(duration);
+            if (!duration || duration <= 0 ){
+                $('#loading').html("INVALID DATE");
+                return;
+            }
+
             enabled = false;
             rolling = setInterval(function () {
             rolled = !rolled;
@@ -34,7 +45,7 @@ var highest = [];
 var averaged = [];
 var detailed = [];
 function processLocationArray(){
-    var days = 15;
+    var days = duration;
     var total= 0;
     var highesttotal = 0;
     var averagedtotal = 0;
