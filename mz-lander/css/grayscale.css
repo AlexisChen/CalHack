@@ -232,7 +232,7 @@ a:focus {
   }
 }
 .content-section {
-  padding-top: 200px;
+  padding-top: 50px;
   /* height: 600px; */
 }
 .download-section {
@@ -405,4 +405,44 @@ input {
   line-height: 24px;
   font-size: 20px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+ul{
+  list-style-type: none;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  padding-left: 20px;
+
+  padding-bottom: 50px;
+  height: 40px;
+  line-height: 40px;
+}
+.aplace li{
+  float: left;
+  padding-left: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+}
+.city{
+  display: inline-block;
+  margin-left: 20px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  background-color: orange;
+  color: #444;
+}
+.hotel{
+  display: inline-block;
+  margin-left: 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: orange;
+  color: #444;
+}
+.day{
+  display: inline-block;
+  margin-left: 20px;
+  border-radius: 5px;
 }
