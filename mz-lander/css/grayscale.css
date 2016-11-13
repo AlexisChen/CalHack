@@ -120,7 +120,7 @@ a:focus {
 .hhh{
     display: table;
   width: 100%;
-  height: auto;
+  height: 800px;
   padding: 100px 0;
   text-align: center;
   color: white;
@@ -232,7 +232,8 @@ a:focus {
   }
 }
 .content-section {
-  padding-top: 50px;
+  padding-top: 200px;
+  /* height: 600px; */
 }
 .download-section {
   width: 100%;

@@ -1,28 +1,17 @@
 
-var a;
 $(document).ready(function(){
     $('#search').click(function(){
-
         generateAirport(46.6734, -71.7412, function(airport) {
             search(airport, function(count) {
-                something(count)
-
+                something(count);
             });
         });
-
-
     });
-
     function something(c) {
         document.write(c);
-    }
-    // var d = new Date();
-    // var year = d.getFullYear();
-    // var month = d.getMonth()+1;
-    // var day = d.getDate();
-    // createSpecificDate(year, month, day)
-    // var s = search("NYC");
+    }  
 });
+
 //pass in the city to generate popularity
 function search(s, callback) {
 
@@ -73,6 +62,11 @@ function generateAirport(latitude, longitude, callback){
 
 
 }
+//returns date of a specific day 
+// var d = new Date();
+// var year = d.getFullYear();
+// var month = d.getMonth()+1;
+// var day = d.getDate();
 
 function createSpecificDate(year, month, day){
             
@@ -82,6 +76,7 @@ function createSpecificDate(year, month, day){
     document.write(date+"<br>");
     return date;
 }
+//get a string of time period
 function createPeriod(year1, month1, day1, year2, month2, day2) {
             
     var date1 = year1 + '-' +

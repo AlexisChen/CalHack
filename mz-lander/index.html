@@ -58,13 +58,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">ABOUT</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#download">Doodle</a>
+                        <a class="page-scroll" href="#download">DOODLE</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Info</a>
+                        <a class="page-scroll" href="#contact">INFO</a>
                     </li>
                 </ul>
             </div>
@@ -79,9 +79,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Grayscale</h1>
-                        <p class="intro-text">A free, responsive, one page Bootstrap theme.
-                            <br>Created by Start Bootstrap.</p>
+                        <h1 class="brand-heading">Trip Planner</h1>
+                        <p class="intro-text">Draw out your trip easy peasy.
+                            <br>Created by Amazing Trojans.</p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -97,7 +97,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>About Trip Planner</h2>
                 <p>Trip planner is a smart application that do the roadtrip plans for you. Whenever you want to go on a roadtrip with families and friends, open trip planner and get on your journey.</p>
-                <p>Click on START to draw your ideal route.</p>
+                <p>Click on DOODLE to draw your ideal route.</p>
                 <p>Press INFO to specify your trip plans</p>
             </div>
         </div>
@@ -256,7 +256,9 @@
             $( "#datepicker1" ).datepicker({
                 dateFormat: "yy-mm-dd"
             });
-
+            $('#map').on('scroll', function(e) {
+                e.preventDefault();
+            });
  
  
             $( "#datepicker2" ).datepicker({
