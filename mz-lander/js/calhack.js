@@ -40,16 +40,24 @@ function processLocationArray(){
     }
     var s = "<p class='title'>Basic Trip</p>";
     for (var i = 0; i<highest.length; i++){
-        s+='<ul class="aplace clearfix"><li class="city"><a href=';
-        s+=url + ">"
+
+        s+='<ul class="aplace clearfix"><li class="city">'
         s+=highest[i].name;
         s+='</a></li><li class="day">'
         s+=Math.floor(highest[i].priority/highesttotal * days)+ " Days</li>";
         s+="</ul><ul class='aplace hotels clearfix'>";
         for (var j = 0 ; j < 5; j++){
-            s+='<li class="hotel">';
+            s+='<li class="hotel" >';
+            var term = highest[i].hotels.0.address.line1+", ";
+            term+= highest[i].hotels.0.address.city;
+            term+= ", ";
+            term+= highest[i].hotels.0.address.country;
+            term+=", ";
+            term+= highest[i].hotels.0.address.postal_code;
+            var url = "http://maps.google.com/?q="+term;
+            s+='<a href="' + url + '">  '
             s+=highest[i].hotels[j].property_name;
-            s+='</li>'
+            s+='</a></li>'
         }
         s+='</ul>';
     }
